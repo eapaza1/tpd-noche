@@ -135,6 +135,7 @@
             btn_actualizar.TabIndex = 11;
             btn_actualizar.Text = "ACTUALIZAR";
             btn_actualizar.UseVisualStyleBackColor = true;
+            btn_actualizar.Click += btn_actualizar_Click;
             // 
             // btn_eliminar
             // 
@@ -145,6 +146,7 @@
             btn_eliminar.TabIndex = 12;
             btn_eliminar.Text = "ELIMINAR";
             btn_eliminar.UseVisualStyleBackColor = true;
+            btn_eliminar.Click += btn_eliminar_Click;
             // 
             // btn_cancelar
             // 
@@ -155,6 +157,7 @@
             btn_cancelar.TabIndex = 13;
             btn_cancelar.Text = "CANCELAR";
             btn_cancelar.UseVisualStyleBackColor = true;
+            btn_cancelar.Click += btn_cancelar_Click;
             // 
             // dgw_users
             // 
@@ -164,6 +167,7 @@
             dgw_users.RowTemplate.Height = 25;
             dgw_users.Size = new Size(429, 367);
             dgw_users.TabIndex = 14;
+            dgw_users.CellClick += dgw_users_CellClick;
             // 
             // Form1
             // 
