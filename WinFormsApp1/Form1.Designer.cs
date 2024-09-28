@@ -44,6 +44,7 @@
             btn_cancelar = new Button();
             dgw_users = new DataGridView();
             contextMenuStrip1 = new ContextMenuStrip(components);
+            btn_salir = new Button();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgw_users).BeginInit();
             SuspendLayout();
@@ -163,7 +164,7 @@
             // dgw_users
             // 
             dgw_users.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgw_users.Location = new Point(465, 13);
+            dgw_users.Location = new Point(465, 12);
             dgw_users.Name = "dgw_users";
             dgw_users.RowTemplate.Height = 25;
             dgw_users.Size = new Size(429, 367);
@@ -175,11 +176,22 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
+            // btn_salir
+            // 
+            btn_salir.Location = new Point(151, 315);
+            btn_salir.Name = "btn_salir";
+            btn_salir.Size = new Size(75, 23);
+            btn_salir.TabIndex = 15;
+            btn_salir.Text = "Salir";
+            btn_salir.UseVisualStyleBackColor = true;
+            btn_salir.Click += btn_salir_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(906, 392);
+            Controls.Add(btn_salir);
             Controls.Add(dgw_users);
             Controls.Add(btn_cancelar);
             Controls.Add(btn_eliminar);
@@ -205,7 +217,7 @@
         #endregion
 
         private BindingSource bindingSource1;
-        private Button button1;
+        private Button btn_salir;
         private TextBox txt_user;
         private Label label1;
         private Label label2;

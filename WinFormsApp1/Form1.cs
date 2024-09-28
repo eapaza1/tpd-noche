@@ -150,7 +150,13 @@ namespace TpdNoche
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             limpiarFormulario();
-        }      
+            //fasefe4r
+        }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 
 }

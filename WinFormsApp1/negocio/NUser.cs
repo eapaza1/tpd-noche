@@ -46,6 +46,7 @@ namespace TpdNoche.negocio
             return model.Delete(data);
         }
 
+        
 
         private string hashPassword(string password)
         {
@@ -57,6 +58,26 @@ namespace TpdNoche.negocio
 
         }
 
+        public string login(string username, string password)
+        {
+            EUser usuario= model.FindByUsername(username);
 
+            if (usuario.Username != null)
+            {
+                //usuario verificado
+                if(BCrypt.Net.BCrypt.Verify(password,usuario.Password))
+                {
+                    return "exito";
+                }
+                else
+                {
+                    return "password incorrecto";
+                }
+            }
+            else
+            {
+                return "usuario incorrecto";
+            }
+        }
     }
 }

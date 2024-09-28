@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tpd-noche", "WinFormsApp1\tpd-noche.csproj", "{A617C83B-8F1D-48B6-A0BA-86D8F07A3433}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TpdNoche", "WinFormsApp1\TpdNoche.csproj", "{A617C83B-8F1D-48B6-A0BA-86D8F07A3433}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

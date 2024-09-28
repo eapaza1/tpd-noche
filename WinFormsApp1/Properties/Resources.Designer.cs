@@ -39,7 +39,7 @@ namespace TpdNoche.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("tpd-noche.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TpdNoche.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace TpdNoche.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logo_rojo {
+        internal static System.Drawing.Bitmap hombre {
             get {
-                object obj = ResourceManager.GetObject("logo_rojo", resourceCulture);
+                object obj = ResourceManager.GetObject("hombre", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
