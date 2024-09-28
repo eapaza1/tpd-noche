@@ -38,7 +38,6 @@ namespace TpdNoche
             ReadAll();
         }
 
-
         private void ReadAll()
         {
             DataTable dt = new DataTable();
