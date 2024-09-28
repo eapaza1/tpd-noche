@@ -43,6 +43,7 @@
             btn_eliminar = new Button();
             btn_cancelar = new Button();
             dgw_users = new DataGridView();
+            contextMenuStrip1 = new ContextMenuStrip(components);
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgw_users).BeginInit();
             SuspendLayout();
@@ -169,6 +170,11 @@
             dgw_users.TabIndex = 14;
             dgw_users.CellClick += dgw_users_CellClick;
             // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -213,5 +219,6 @@
         private Button btn_eliminar;
         private Button btn_cancelar;
         private DataGridView dgw_users;
+        private ContextMenuStrip contextMenuStrip1;
     }
 }

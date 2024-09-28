@@ -80,5 +80,45 @@ namespace TpdNoche.modelo
             //{tabla}
         }
 
+        public EUser FindById(int id)
+        {
+            EUser user = new EUser();
+            string sql = $"SELECT * FROM {tabla} WHERE id=@id";
+            MySqlCommand cmd = new MySqlCommand(sql,conexion.getConexion);
+            cmd.Parameters.AddWithValue("@id", id);
+            conexion.Open();
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {               
+                user.Id = reader.GetInt32("id");
+                user.Username = reader.GetString("username");
+                user.Password = reader.GetString("password");
+                user.Email = reader.GetString("email");
+            }
+            reader.Close();
+            return user;
+        }
+        
+        public EUser FindByUsername(string username)
+        {
+            EUser usuario= new EUser();
+            string sql = $"SELECT * FROM {tabla} WHERE username=@username";
+
+            var cmd = new MySqlCommand(sql, conexion.getConexion);
+
+            cmd.Parameters.AddWithValue("@username", username);
+
+            conexion.Open();
+            var reader=cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                usuario.Id=reader.GetInt32("id");
+                usuario.Username=reader.GetString("username");
+                usuario.Password=reader.GetString("password");
+                usuario.Email=reader.GetString("email");
+            }
+            reader.Close();
+            return usuario;
+        }
     }
 }

@@ -1,4 +1,3 @@
-using MySql.Data.MySqlClient;
 using System.Data;
 using TpdNoche.entidad;
 using TpdNoche.negocio;
@@ -19,31 +18,6 @@ namespace TpdNoche
             limpiarFormulario();
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string cadenaConexion =
-                "Server=localhost;Database=test_lurin;User ID=root;Password=;SslMode=none;";
-
-            MySqlConnection conexion = new MySqlConnection(cadenaConexion);
-            try
-            {
-                conexion.Open();
-                MessageBox.Show("Conexion exitosa");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error en conexion: " + ex.Message);
-            }
-            finally
-            {
-                conexion.Close();
-            }
-
-
-
-        }
-
 
 
         private void btn_crear_Click(object sender, EventArgs e)
@@ -106,7 +80,7 @@ namespace TpdNoche
 
                 //mostrar en el formulario
                 txt_user.Text = username;
-                txt_pass.Text = password;
+                //txt_pass.Text = password;
                 txt_mail.Text = email;
 
                 btn_crear.Enabled = false;
@@ -149,15 +123,11 @@ namespace TpdNoche
 
             //efocar cursor
             txt_user.Focus();
-
             id_seleccionado = -1;
-
             btn_actualizar.Enabled = false;
             btn_eliminar.Enabled = false;
 
             btn_crear.Enabled = true;
-
-
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)
@@ -181,7 +151,7 @@ namespace TpdNoche
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             limpiarFormulario();
-        }
+        }      
     }
 
 }
