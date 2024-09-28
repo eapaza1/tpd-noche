@@ -77,7 +77,7 @@
             // 
             // txt_pass
             // 
-            txt_pass.Location = new Point(135, 58);
+            txt_pass.Location = new Point(135, 60);
             txt_pass.Margin = new Padding(3, 2, 3, 2);
             txt_pass.Name = "txt_pass";
             txt_pass.Size = new Size(168, 23);

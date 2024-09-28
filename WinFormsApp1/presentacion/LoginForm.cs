@@ -34,6 +34,8 @@ namespace TpdNoche.presentacion
 
                 Form1 formulario = new Form1();
 
+                limpiarForm();
+
                 formulario.Show();
 
                 this.Hide();
@@ -42,9 +44,18 @@ namespace TpdNoche.presentacion
             else
             {
                 MessageBox.Show(resultado);
+                limpiarForm();
             }
 
 
+        }
+
+
+        private void limpiarForm()
+        {
+            txt_usuario.Clear();
+            txt_password.Clear();
+            txt_usuario.Focus();
         }
     }
 }
