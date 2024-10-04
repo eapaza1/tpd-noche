@@ -124,6 +124,8 @@ namespace TpdNoche
             txt_pass.Clear();
             txt_user.Clear();
 
+
+
             //efocar cursor
             txt_user.Focus();
             id_seleccionado = -1;
