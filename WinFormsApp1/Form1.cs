@@ -82,6 +82,10 @@ namespace TpdNoche
                 //txt_pass.Text = password;
                 txt_mail.Text = email;
 
+                txt_pass.Enabled = false;
+                pictureBox1.Visible = true;
+
+
                 btn_crear.Enabled = false;
                 btn_actualizar.Enabled = true;
                 btn_eliminar.Enabled = true;
@@ -126,6 +130,9 @@ namespace TpdNoche
             btn_actualizar.Enabled = false;
             btn_eliminar.Enabled = false;
 
+            txt_pass.Enabled = true;
+            pictureBox1.Visible= false;
+
             btn_crear.Enabled = true;
         }
 
@@ -156,6 +163,12 @@ namespace TpdNoche
         private void btn_salir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            txt_pass.Enabled = true;
+            txt_pass.Focus();
         }
     }
 

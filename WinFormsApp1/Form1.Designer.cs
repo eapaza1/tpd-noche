@@ -45,8 +45,10 @@
             dgw_users = new DataGridView();
             contextMenuStrip1 = new ContextMenuStrip(components);
             btn_salir = new Button();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgw_users).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txt_user
@@ -186,11 +188,23 @@
             btn_salir.UseVisualStyleBackColor = true;
             btn_salir.Click += btn_salir_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.pluma_hand;
+            pictureBox1.Location = new Point(306, 60);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(33, 23);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 16;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(906, 392);
+            Controls.Add(pictureBox1);
             Controls.Add(btn_salir);
             Controls.Add(dgw_users);
             Controls.Add(btn_cancelar);
@@ -210,6 +224,7 @@
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgw_users).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -232,5 +247,6 @@
         private Button btn_cancelar;
         private DataGridView dgw_users;
         private ContextMenuStrip contextMenuStrip1;
+        private PictureBox pictureBox1;
     }
 }

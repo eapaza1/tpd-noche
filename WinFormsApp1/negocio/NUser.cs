@@ -65,6 +65,7 @@ namespace TpdNoche.negocio
             if (usuario.Username != null)
             {
                 //usuario verificado
+                //password==usuario.Password
                 if(BCrypt.Net.BCrypt.Verify(password,usuario.Password))
                 {
                     return "exito";
