@@ -93,6 +93,7 @@
             btn_add.TabIndex = 4;
             btn_add.Text = "Add Cart";
             btn_add.UseVisualStyleBackColor = false;
+            btn_add.Click += btn_add_Click;
             // 
             // CardProduct
             // 

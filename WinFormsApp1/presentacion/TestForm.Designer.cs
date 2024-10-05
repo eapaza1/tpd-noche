@@ -29,76 +29,52 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestForm));
+            panel_dinamico = new FlowLayoutPanel();
             cardProduct1 = new Componentes.CardProduct();
-            cardProduct2 = new Componentes.CardProduct();
-            cardProduct3 = new Componentes.CardProduct();
+            panel_dinamico.SuspendLayout();
             SuspendLayout();
+            // 
+            // panel_dinamico
+            // 
+            panel_dinamico.Controls.Add(cardProduct1);
+            panel_dinamico.Dock = DockStyle.Fill;
+            panel_dinamico.Location = new Point(0, 0);
+            panel_dinamico.Name = "panel_dinamico";
+            panel_dinamico.Size = new Size(800, 450);
+            panel_dinamico.TabIndex = 0;
             // 
             // cardProduct1
             // 
             cardProduct1.BackColor = Color.White;
-            cardProduct1.CardButonBack = Color.Cyan;
-            cardProduct1.CardColor = Color.Cyan;
-            cardProduct1.CardDescripcion = "Laptop AlienWare de 64Gb";
-            cardProduct1.CardImage = Properties.Resources.pluma_hand;
-            cardProduct1.CardPrecio = "$5000.00";
-            cardProduct1.CardPriceColor = Color.Blue;
-            cardProduct1.CardTitulo = "LAPTOP GAMER";
-            cardProduct1.Location = new Point(56, 36);
+            cardProduct1.CardButonBack = Color.Lime;
+            cardProduct1.CardColor = Color.Lime;
+            cardProduct1.CardDescripcion = "Laptop AlienWare de 32Gb";
+            cardProduct1.CardImage = (Image)resources.GetObject("cardProduct1.CardImage");
+            cardProduct1.CardPrecio = "$100.00";
+            cardProduct1.CardPriceColor = SystemColors.ControlText;
+            cardProduct1.CardTitulo = "LAPTOP";
+            cardProduct1.Location = new Point(3, 3);
             cardProduct1.Name = "cardProduct1";
             cardProduct1.Padding = new Padding(10);
-            cardProduct1.Size = new Size(169, 320);
+            cardProduct1.Size = new Size(180, 339);
             cardProduct1.TabIndex = 0;
-            // 
-            // cardProduct2
-            // 
-            cardProduct2.BackColor = Color.White;
-            cardProduct2.CardButonBack = Color.FromArgb(255, 128, 0);
-            cardProduct2.CardColor = Color.FromArgb(255, 128, 0);
-            cardProduct2.CardDescripcion = "Laptop AlienWare de 32Gb";
-            cardProduct2.CardImage = Properties.Resources.hombre;
-            cardProduct2.CardPrecio = "$100.00";
-            cardProduct2.CardPriceColor = Color.FromArgb(255, 128, 0);
-            cardProduct2.CardTitulo = "LAPTOP";
-            cardProduct2.Location = new Point(259, 36);
-            cardProduct2.Name = "cardProduct2";
-            cardProduct2.Padding = new Padding(10);
-            cardProduct2.Size = new Size(180, 320);
-            cardProduct2.TabIndex = 1;
-            // 
-            // cardProduct3
-            // 
-            cardProduct3.BackColor = Color.White;
-            cardProduct3.CardButonBack = Color.Lime;
-            cardProduct3.CardColor = Color.Lime;
-            cardProduct3.CardDescripcion = "Laptop AlienWare de 32Gb";
-            cardProduct3.CardImage = (Image)resources.GetObject("cardProduct3.CardImage");
-            cardProduct3.CardPrecio = "$100.00";
-            cardProduct3.CardPriceColor = SystemColors.ControlText;
-            cardProduct3.CardTitulo = "LAPTOP";
-            cardProduct3.Location = new Point(458, 36);
-            cardProduct3.Name = "cardProduct3";
-            cardProduct3.Padding = new Padding(10);
-            cardProduct3.Size = new Size(180, 315);
-            cardProduct3.TabIndex = 2;
+            cardProduct1.CardAddClick += cardProduct1_CardAddClick;
             // 
             // TestForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(cardProduct3);
-            Controls.Add(cardProduct2);
-            Controls.Add(cardProduct1);
+            Controls.Add(panel_dinamico);
             Name = "TestForm";
             Text = "TestForm";
+            panel_dinamico.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
+        private FlowLayoutPanel panel_dinamico;
         private Componentes.CardProduct cardProduct1;
-        private Componentes.CardProduct cardProduct2;
-        private Componentes.CardProduct cardProduct3;
     }
 }

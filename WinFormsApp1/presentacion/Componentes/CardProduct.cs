@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TpdNoche.entidad;
 
 namespace TpdNoche.presentacion.Componentes
 {
     public partial class CardProduct : UserControl
     {
+        EUser item;
+        //personalizacion de evento
+        public delegate void CardAddEvent(object data,EventArgs e);
+        //declaracion de Evento
+        public event CardAddEvent CardAddClick;
 
         public CardProduct()
         {
@@ -49,8 +55,8 @@ namespace TpdNoche.presentacion.Componentes
         }
         public Color CardPriceColor
         {
-            get=>lbl_precio.ForeColor;
-            set=> lbl_precio.ForeColor = value;
+            get => lbl_precio.ForeColor;
+            set => lbl_precio.ForeColor = value;
         }
 
         public Color CardColor
@@ -61,9 +67,14 @@ namespace TpdNoche.presentacion.Componentes
             {
                 btn_add.BackColor = value;
                 lbl_precio.ForeColor = value;
-               
+
             }
 
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            CardAddClick?.Invoke(lbl_titulo.Text, e);
         }
     }
 }
