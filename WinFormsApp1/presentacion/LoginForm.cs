@@ -25,27 +25,31 @@ namespace TpdNoche.presentacion
         {
             String username = txt_usuario.Text;
             string password = txt_password.Text;
-
-            string resultado = control.login(username, password);
-
-            if (resultado == "exito")
+            try
             {
-                MessageBox.Show("bienvenido al sistema");
+                string resultado = control.login(username, password);
 
-                Form1 formulario = new Form1();
+                if (resultado == "exito")
+                {
+                    MessageBox.Show("bienvenido al sistema");
+                    Form1 formulario = new Form1();
+                    limpiarForm();
+                    formulario.Show();
+                    this.Hide();
 
-                limpiarForm();
 
-                formulario.Show();
-
-                this.Hide();
-
+                }
+                else
+                {
+                    MessageBox.Show(resultado);
+                    limpiarForm();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show(resultado);
-                limpiarForm();
+                MessageBox.Show(ex.Message);
             }
+           
 
 
         }
