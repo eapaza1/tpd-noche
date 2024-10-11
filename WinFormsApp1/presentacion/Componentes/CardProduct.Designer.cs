@@ -33,7 +33,9 @@
             lbl_descripcion = new Label();
             lbl_precio = new Label();
             btn_add = new Button();
+            btn_me_gusta = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)img_producto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_me_gusta).BeginInit();
             SuspendLayout();
             // 
             // img_producto
@@ -95,11 +97,24 @@
             btn_add.UseVisualStyleBackColor = false;
             btn_add.Click += btn_add_Click;
             // 
+            // btn_me_gusta
+            // 
+            btn_me_gusta.Cursor = Cursors.Hand;
+            btn_me_gusta.Image = Properties.Resources.me_gusta;
+            btn_me_gusta.Location = new Point(145, 13);
+            btn_me_gusta.Name = "btn_me_gusta";
+            btn_me_gusta.Size = new Size(22, 19);
+            btn_me_gusta.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_me_gusta.TabIndex = 5;
+            btn_me_gusta.TabStop = false;
+            btn_me_gusta.Click += btn_me_gusta_Click;
+            // 
             // CardProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(btn_me_gusta);
             Controls.Add(btn_add);
             Controls.Add(lbl_precio);
             Controls.Add(lbl_descripcion);
@@ -109,6 +124,7 @@
             Padding = new Padding(10);
             Size = new Size(180, 339);
             ((System.ComponentModel.ISupportInitialize)img_producto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_me_gusta).EndInit();
             ResumeLayout(false);
         }
 
@@ -119,5 +135,6 @@
         private Label lbl_descripcion;
         private Label lbl_precio;
         private Button btn_add;
+        private PictureBox btn_me_gusta;
     }
 }

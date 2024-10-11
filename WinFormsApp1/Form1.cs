@@ -133,7 +133,7 @@ namespace TpdNoche
             btn_eliminar.Enabled = false;
 
             txt_pass.Enabled = true;
-            pictureBox1.Visible= false;
+            pictureBox1.Visible = false;
 
             btn_crear.Enabled = true;
         }

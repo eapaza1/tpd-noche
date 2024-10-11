@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TpdNoche.entidad;
 using TpdNoche.presentacion.Componentes;
 
 namespace TpdNoche.presentacion
@@ -25,10 +26,15 @@ namespace TpdNoche.presentacion
         {
             for (int i = 0; i < 10; i++)
             {
+                EProducto item= new EProducto();
+                item.Nombre = "Producto n " + i;
+                item.Precio = i * 100;
+                item.Descripcion = "Descripcion del producto n°: " + i;
+                item.Stock = i;
+
+
                 CardProduct product = new CardProduct();
-                product.CardTitulo = "Componente " + i;
-                product.CardDescripcion = "Descriupcion del compoente n°" + i;
-                product.CardPrecio = "$ " + (i * 1000);
+
                 if (i % 2 == 0)
                 {
                     product.CardPriceColor = Color.Blue;
@@ -36,7 +42,13 @@ namespace TpdNoche.presentacion
                     //product.CardColor = Color.Blue;
                 }
 
-                product.CardAddClick += cardProduct1_CardAddClick;
+                product.Item = item;
+
+                if (item.Stock>0)
+                {
+                    product.btnAddClick += agregarProducto;                   
+                }
+                product.btnMeGusta += botonMeguasta;
 
 
                 panel_dinamico.Controls.Add(product);
@@ -47,15 +59,15 @@ namespace TpdNoche.presentacion
 
         }
 
-
-        private void cardProduct1_Click(object sender, EventArgs e)
+        private void botonMeguasta(EProducto data, EventArgs e)
         {
-            MessageBox.Show("mensaje desde add Card");
+            MessageBox.Show("desde boton me gusta El productos es: " + data.Nombre + " con precio: " + data.Precio);
         }
 
-        private void cardProduct1_CardAddClick(object data, EventArgs e)
+        private void agregarProducto(EProducto data, EventArgs e)
         {
-            MessageBox.Show("mensaje desde add Card con data: "+ data.ToString());
+            MessageBox.Show("El productos es: " + data.Nombre + " con precio: " + data.Precio);
         }
+
     }
 }

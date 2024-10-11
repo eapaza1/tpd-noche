@@ -13,39 +13,36 @@ namespace TpdNoche.presentacion.Componentes
 {
     public partial class CardProduct : UserControl
     {
-        EUser item;
-        //personalizacion de evento
-        public delegate void CardAddEvent(object data,EventArgs e);
-        //declaracion de Evento
-        public event CardAddEvent CardAddClick;
+        private EProducto item;
+
+        public delegate void EventoClick(EProducto data, EventArgs e);
+
+
+        public event EventoClick btnAddClick;
+        public event EventoClick btnMeGusta;
+
 
         public CardProduct()
         {
             InitializeComponent();
         }
 
-        public Image CardImage
+        public EProducto Item
         {
-            get => img_producto.Image;
-            set => img_producto.Image = value;
+            get => item;
+            set
+            {
+                item = value;
+                mostrar();
+            }
+
         }
 
-        public string CardTitulo
+        private void mostrar()
         {
-            get => lbl_titulo.Text;
-            set => lbl_titulo.Text = value;
-        }
-
-        public string CardDescripcion
-        {
-            get => lbl_descripcion.Text;
-            set => lbl_descripcion.Text = value;
-        }
-
-        public string CardPrecio
-        {
-            get => lbl_precio.Text;
-            set => lbl_precio.Text = value;
+            lbl_titulo.Text = item.Nombre;
+            lbl_descripcion.Text = item.Descripcion;
+            lbl_precio.Text = item.Precio.ToString();
         }
 
         public Color CardButonBack
@@ -74,7 +71,18 @@ namespace TpdNoche.presentacion.Componentes
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            CardAddClick?.Invoke(lbl_titulo.Text, e);
+            if (btnAddClick!=null)
+            {
+                btnAddClick(item, e);
+
+            }
+            
+        }
+
+        private void btn_me_gusta_Click(object sender, EventArgs e)
+        {
+            // (1>2)?"valor verdadero":"valor si falso"
+            btnMeGusta?.Invoke(item, e);
         }
     }
 }

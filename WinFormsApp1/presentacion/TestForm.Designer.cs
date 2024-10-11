@@ -28,37 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestForm));
             panel_dinamico = new FlowLayoutPanel();
-            cardProduct1 = new Componentes.CardProduct();
-            panel_dinamico.SuspendLayout();
             SuspendLayout();
             // 
             // panel_dinamico
             // 
-            panel_dinamico.Controls.Add(cardProduct1);
             panel_dinamico.Dock = DockStyle.Fill;
             panel_dinamico.Location = new Point(0, 0);
             panel_dinamico.Name = "panel_dinamico";
             panel_dinamico.Size = new Size(800, 450);
             panel_dinamico.TabIndex = 0;
-            // 
-            // cardProduct1
-            // 
-            cardProduct1.BackColor = Color.White;
-            cardProduct1.CardButonBack = Color.Lime;
-            cardProduct1.CardColor = Color.Lime;
-            cardProduct1.CardDescripcion = "Laptop AlienWare de 32Gb";
-            cardProduct1.CardImage = (Image)resources.GetObject("cardProduct1.CardImage");
-            cardProduct1.CardPrecio = "$100.00";
-            cardProduct1.CardPriceColor = SystemColors.ControlText;
-            cardProduct1.CardTitulo = "LAPTOP";
-            cardProduct1.Location = new Point(3, 3);
-            cardProduct1.Name = "cardProduct1";
-            cardProduct1.Padding = new Padding(10);
-            cardProduct1.Size = new Size(180, 339);
-            cardProduct1.TabIndex = 0;
-            cardProduct1.CardAddClick += cardProduct1_CardAddClick;
             // 
             // TestForm
             // 
@@ -68,13 +47,11 @@
             Controls.Add(panel_dinamico);
             Name = "TestForm";
             Text = "TestForm";
-            panel_dinamico.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private FlowLayoutPanel panel_dinamico;
-        private Componentes.CardProduct cardProduct1;
     }
 }
