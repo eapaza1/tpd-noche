@@ -33,11 +33,14 @@
             // 
             // panel_dinamico
             // 
+            panel_dinamico.AutoScroll = true;
             panel_dinamico.Dock = DockStyle.Fill;
+            panel_dinamico.FlowDirection = FlowDirection.TopDown;
             panel_dinamico.Location = new Point(0, 0);
             panel_dinamico.Name = "panel_dinamico";
             panel_dinamico.Size = new Size(800, 450);
             panel_dinamico.TabIndex = 0;
+            panel_dinamico.WrapContents = false;
             // 
             // TestForm
             // 

@@ -9,7 +9,7 @@ namespace TpdNoche.entidad
     public class EProducto
     {
         private int id;
-        private string nombre, descripcion;
+        private string nombre, descripcion,categoria;
         private double precio, stock;
         private byte[] imagen;
 
@@ -34,5 +34,6 @@ namespace TpdNoche.entidad
         public double Precio { get => precio; set => precio = value; }
         public double Stock { get => stock; set => stock = value; }
         public byte[] Imagen { get => imagen; set => imagen = value; }
+        public string Categoria { get => categoria; set => categoria = value; }
     }
 }

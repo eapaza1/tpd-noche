@@ -43,6 +43,13 @@ namespace TpdNoche.presentacion.Componentes
             lbl_titulo.Text = item.Nombre;
             lbl_descripcion.Text = item.Descripcion;
             lbl_precio.Text = item.Precio.ToString();
+
+            //mostra la imagen
+            using(MemoryStream ms = new MemoryStream(item.Imagen))
+            {
+                Image imagen= Image.FromStream(ms);
+                img_producto.Image = imagen;
+            }
         }
 
         public Color CardButonBack

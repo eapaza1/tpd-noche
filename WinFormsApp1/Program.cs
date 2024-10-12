@@ -10,7 +10,7 @@ namespace TpdNoche
         {
             
             ApplicationConfiguration.Initialize();
-            Application.Run(new presentacion.TestForm());
+            Application.Run(new presentacion.FormProductos());
         }
     }
 }

@@ -26,7 +26,7 @@ namespace TpdNoche.presentacion
         {
             for (int i = 0; i < 10; i++)
             {
-                EProducto item= new EProducto();
+                EProducto item = new EProducto();
                 item.Nombre = "Producto n " + i;
                 item.Precio = i * 100;
                 item.Descripcion = "Descripcion del producto n°: " + i;
@@ -44,9 +44,9 @@ namespace TpdNoche.presentacion
 
                 product.Item = item;
 
-                if (item.Stock>0)
+                if (item.Stock > 0)
                 {
-                    product.btnAddClick += agregarProducto;                   
+                    product.btnAddClick += agregarProducto;
                 }
                 product.btnMeGusta += botonMeguasta;
 
