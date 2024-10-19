@@ -25,5 +25,14 @@ namespace TpdNoche.negocio
         {
             return modelo.ReadAll();
         }
+
+        public int Update(EProducto data)
+        {
+            return modelo.Update(data);
+        }
+        public int Delete(EProducto data)
+        {
+            return modelo.Delete(data);
+        }
     }
 }

@@ -59,14 +59,6 @@ namespace TpdNoche.modelo
                 row.Stock = reader.GetDouble("precio");
                 row.Categoria = reader.GetString("categoria");
 
-                //// row.Imagen = reader.GetByte("imagen");
-                //long length = reader.GetBytes(reader.GetOrdinal("imagen"), 0, null, 0, 0);
-                //// Obtener la longitud de los bytes
-                //byte[] imageData = new byte[length]; 
-                //// Crear un array de bytes para almacenar la imagen
-
-                //reader.GetBytes(reader.GetOrdinal("imagen"), 0, imageData, 0,(int)length); // Leer la imagen desde la base de datos
-
                 row.Imagen = getData(reader,"imagen");
 
                 productos.Add(row);
@@ -76,6 +68,34 @@ namespace TpdNoche.modelo
             reader.Close();
 
             return productos;
+        }
+
+        public int Update(EProducto data)
+        {
+            string sql = $"UPDATE {tabla} SET nombre=@nombre,descripcion=@desc,precio=@precio,stock=@stock,imagen=@imagen,categoria=@categoria" +
+                $" WHERE id=@id";
+            MySqlCommand cmd = new MySqlCommand(sql,conexion.getConexion);
+            cmd.Parameters.AddWithValue("@nombre", data.Nombre);
+            cmd.Parameters.AddWithValue("@desc", data.Descripcion);
+            cmd.Parameters.AddWithValue("@precio", data.Precio);
+            cmd.Parameters.AddWithValue("@stock", data.Stock);
+            cmd.Parameters.AddWithValue("@imagen", data.Imagen);
+            cmd.Parameters.AddWithValue("@categoria", data.Categoria);
+            cmd.Parameters.AddWithValue("@id", data.Id);
+
+            conexion.Open();
+
+            return cmd.ExecuteNonQuery();
+
+        }
+
+        public int Delete(EProducto data)
+        {
+            string sql = $"DELETE FROM {tabla} WHERE id=@id";
+            MySqlCommand cmd = new MySqlCommand(sql ,conexion.getConexion);
+            cmd.Parameters.AddWithValue("@id", data.Id);
+            conexion .Open();
+            return cmd.ExecuteNonQuery();
         }
 
         private byte[] getData(MySqlDataReader reader,String columna)
@@ -89,6 +109,8 @@ namespace TpdNoche.modelo
             reader.GetBytes(reader.GetOrdinal(columna), 0, imageData, 0, (int)length); // Leer la imagen desde la base de datos
             return imageData;
         }
+
+        
 
     }
 }

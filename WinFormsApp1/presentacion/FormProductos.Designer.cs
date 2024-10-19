@@ -46,16 +46,20 @@
             btn_cancelar = new Button();
             label7 = new Label();
             txt_buscar = new TextBox();
+            btn_actualizar = new Button();
             ((System.ComponentModel.ISupportInitialize)img_producto).BeginInit();
             SuspendLayout();
             // 
             // panel_productos
             // 
+            panel_productos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel_productos.AutoScroll = true;
+            panel_productos.FlowDirection = FlowDirection.TopDown;
             panel_productos.Location = new Point(303, 73);
             panel_productos.Name = "panel_productos";
-            panel_productos.Size = new Size(485, 365);
+            panel_productos.Size = new Size(585, 365);
             panel_productos.TabIndex = 0;
+            panel_productos.WrapContents = false;
             // 
             // label1
             // 
@@ -169,7 +173,7 @@
             // 
             // btn_agregar
             // 
-            btn_agregar.Location = new Point(46, 374);
+            btn_agregar.Location = new Point(13, 374);
             btn_agregar.Name = "btn_agregar";
             btn_agregar.Size = new Size(75, 36);
             btn_agregar.TabIndex = 14;
@@ -179,12 +183,13 @@
             // 
             // btn_cancelar
             // 
-            btn_cancelar.Location = new Point(159, 374);
+            btn_cancelar.Location = new Point(204, 374);
             btn_cancelar.Name = "btn_cancelar";
             btn_cancelar.Size = new Size(84, 37);
             btn_cancelar.TabIndex = 15;
             btn_cancelar.Text = "CANCELAR";
             btn_cancelar.UseVisualStyleBackColor = true;
+            btn_cancelar.Click += btn_cancelar_Click;
             // 
             // label7
             // 
@@ -204,11 +209,22 @@
             txt_buscar.TabIndex = 17;
             txt_buscar.TextChanged += txt_buscar_TextChanged;
             // 
+            // btn_actualizar
+            // 
+            btn_actualizar.Location = new Point(94, 374);
+            btn_actualizar.Name = "btn_actualizar";
+            btn_actualizar.Size = new Size(104, 36);
+            btn_actualizar.TabIndex = 18;
+            btn_actualizar.Text = "ACTUALIZAR";
+            btn_actualizar.UseVisualStyleBackColor = true;
+            btn_actualizar.Click += btn_actualizar_Click;
+            // 
             // FormProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(900, 450);
+            Controls.Add(btn_actualizar);
             Controls.Add(txt_buscar);
             Controls.Add(label7);
             Controls.Add(btn_cancelar);
@@ -254,5 +270,6 @@
         private Button btn_cancelar;
         private Label label7;
         private TextBox txt_buscar;
+        private Button btn_actualizar;
     }
 }
