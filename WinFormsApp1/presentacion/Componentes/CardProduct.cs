@@ -45,9 +45,9 @@ namespace TpdNoche.presentacion.Componentes
             lbl_precio.Text = item.Precio.ToString();
 
             //mostra la imagen
-            using(MemoryStream ms = new MemoryStream(item.Imagen))
+            using (MemoryStream ms = new MemoryStream(item.Imagen))
             {
-                Image imagen= Image.FromStream(ms);
+                Image imagen = Image.FromStream(ms);
                 img_producto.Image = imagen;
             }
         }
@@ -78,12 +78,12 @@ namespace TpdNoche.presentacion.Componentes
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            if (btnAddClick!=null)
+            if (btnAddClick != null)
             {
                 btnAddClick(item, e);
 
             }
-            
+
         }
 
         private void btn_me_gusta_Click(object sender, EventArgs e)
