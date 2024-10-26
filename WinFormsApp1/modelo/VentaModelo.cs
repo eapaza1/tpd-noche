@@ -60,7 +60,7 @@ namespace TpdNoche.modelo
                         foreach (var item in data.Detalles)
                         {
                             cmd.Parameters.Clear();
-                            //EJECUCION DE LAS OPERACIONES DE DETALLE VENTA
+                            //EJECUCION DE INSERTAR DETALLE VENTA
 
                             cmd.CommandText = $"INSERT INTO {tabla_dventa} (" +
                                 $"venta_id,producto_id,cantidad,precio) " +
@@ -70,6 +70,15 @@ namespace TpdNoche.modelo
                             cmd.Parameters.AddWithValue("@c", item.Cantidad);
                             cmd.Parameters.AddWithValue("@p", item.Precio);
                             contador += cmd.ExecuteNonQuery();
+                            
+
+                            //actualizar stock producto
+                            cmd.Parameters.Clear();
+                            cmd.CommandText = "Update producto set stock=stock-@cantidad where id=@id";
+                            cmd.Parameters.AddWithValue("@cantidad",  item.Cantidad);
+                            cmd.Parameters.AddWithValue("@id",item.Producto_id);
+                            cmd.ExecuteNonQuery();
+
                         }
 
                         if (contador == data.Detalles.Count)
