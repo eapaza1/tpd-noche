@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 using TpdNoche.entidad;
 
 namespace TpdNoche.modelo
@@ -28,6 +29,7 @@ namespace TpdNoche.modelo
 
             int res=cmd.ExecuteNonQuery();
             return res;
+            
         }
         public List<EUser> ReadAll()
         {

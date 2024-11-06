@@ -1,4 +1,6 @@
-﻿namespace TpdNoche.presentacion
+﻿using System.Windows.Forms;
+using System.Drawing;
+namespace TpdNoche.presentacion
 {
     partial class LoginForm
     {

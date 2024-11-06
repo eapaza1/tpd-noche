@@ -1,4 +1,6 @@
-﻿namespace TpdNoche.presentacion.Componentes
+﻿using System.Windows.Forms;
+using System.Drawing;
+namespace TpdNoche.presentacion.Componentes
 {
     partial class CardProduct
     {
