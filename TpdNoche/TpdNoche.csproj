@@ -134,6 +134,12 @@
     <Compile Include="presentacion\Componentes\ElementoLibro.Designer.cs">
       <DependentUpon>ElementoLibro.cs</DependentUpon>
     </Compile>
+    <Compile Include="presentacion\Componentes\ItemProductoVenta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="presentacion\Componentes\ItemProductoVenta.Designer.cs">
+      <DependentUpon>ItemProductoVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="presentacion\Componentes\MenuItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -145,6 +151,12 @@
     </Compile>
     <Compile Include="presentacion\Componentes\ProductListItem.Designer.cs">
       <DependentUpon>ProductListItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\Componentes\VentaDetalleItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="presentacion\Componentes\VentaDetalleItem.Designer.cs">
+      <DependentUpon>VentaDetalleItem.cs</DependentUpon>
     </Compile>
     <Compile Include="presentacion\FomrVentas.cs">
       <SubType>Form</SubType>
@@ -201,11 +213,17 @@
     <EmbeddedResource Include="presentacion\Componentes\ElementoLibro.resx">
       <DependentUpon>ElementoLibro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Componentes\ItemProductoVenta.resx">
+      <DependentUpon>ItemProductoVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\Componentes\MenuItem.resx">
       <DependentUpon>MenuItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\Componentes\ProductListItem.resx">
       <DependentUpon>ProductListItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Componentes\VentaDetalleItem.resx">
+      <DependentUpon>VentaDetalleItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\FomrVentas.resx">
       <DependentUpon>FomrVentas.cs</DependentUpon>

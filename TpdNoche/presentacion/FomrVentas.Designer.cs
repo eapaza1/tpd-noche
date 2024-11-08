@@ -30,120 +30,133 @@ namespace TpdNoche.presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            comboBox1 = new ComboBox();
-            panel_productos = new FlowLayoutPanel();
-            textBox1 = new TextBox();
-            panel2 = new Panel();
-            button2 = new Button();
-            button1 = new Button();
-            label1 = new Label();
-            textBox2 = new TextBox();
-            listView1 = new ListView();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.panel_productos = new System.Windows.Forms.FlowLayoutPanel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(panel_productos);
-            panel1.Controls.Add(textBox1);
-            panel1.Location = new Point(22, 25);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(762, 627);
-            panel1.TabIndex = 0;
+            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.panel_productos);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Location = new System.Drawing.Point(18, 16);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(610, 401);
+            this.panel1.TabIndex = 0;
             // 
             // comboBox1
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(498, 12);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(229, 33);
-            comboBox1.TabIndex = 2;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(398, 8);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(184, 24);
+            this.comboBox1.TabIndex = 2;
             // 
             // panel_productos
             // 
-            panel_productos.Location = new Point(19, 71);
-            panel_productos.Name = "panel_productos";
-            panel_productos.Size = new Size(729, 538);
-            panel_productos.TabIndex = 1;
+            this.panel_productos.Location = new System.Drawing.Point(15, 45);
+            this.panel_productos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_productos.Name = "panel_productos";
+            this.panel_productos.Size = new System.Drawing.Size(583, 344);
+            this.panel_productos.TabIndex = 1;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(19, 12);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(328, 31);
-            textBox1.TabIndex = 0;
+            this.textBox1.Location = new System.Drawing.Point(15, 8);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(263, 22);
+            this.textBox1.TabIndex = 0;
             // 
             // panel2
             // 
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(listView1);
-            panel2.Location = new Point(818, 25);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(428, 627);
-            panel2.TabIndex = 1;
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.listView1);
+            this.panel2.Location = new System.Drawing.Point(654, 16);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(342, 401);
+            this.panel2.TabIndex = 1;
             // 
             // button2
             // 
-            button2.Location = new Point(222, 559);
-            button2.Name = "button2";
-            button2.Size = new Size(146, 38);
-            button2.TabIndex = 4;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(178, 358);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(117, 24);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            button1.Location = new Point(39, 559);
-            button1.Name = "button1";
-            button1.Size = new Size(146, 38);
-            button1.TabIndex = 3;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(31, 358);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 24);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(333, 511);
-            label1.Name = "label1";
-            label1.Size = new Size(59, 25);
-            label1.TabIndex = 2;
-            label1.Text = "label1";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(266, 327);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "label1";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(50, 28);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(169, 31);
-            textBox2.TabIndex = 1;
+            this.textBox2.Location = new System.Drawing.Point(40, 18);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(136, 22);
+            this.textBox2.TabIndex = 1;
             // 
             // listView1
             // 
-            listView1.Location = new Point(19, 121);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(385, 387);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(15, 77);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(309, 249);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // FomrVentas
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1258, 664);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Name = "FomrVentas";
-            Text = "FomrVentas";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1006, 425);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "FomrVentas";
+            this.Text = "FomrVentas";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

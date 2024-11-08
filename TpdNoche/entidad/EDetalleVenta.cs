@@ -11,6 +11,9 @@ namespace TpdNoche.entidad
         private int id, venta_id, producto_id;
         private double cantidad, precio;
 
+        private EProducto producto;
+
+
         public EDetalleVenta()
         {
 
@@ -28,5 +31,6 @@ namespace TpdNoche.entidad
         public int Producto_id { get => producto_id; set => producto_id = value; }
         public double Cantidad { get => cantidad; set => cantidad = value; }
         public double Precio { get => precio; set => precio = value; }
+        public EProducto Producto { get => producto; set => producto = value; }
     }
 }

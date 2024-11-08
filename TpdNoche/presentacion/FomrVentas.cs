@@ -19,25 +19,26 @@ namespace TpdNoche.presentacion
         {
             InitializeComponent();
             negocio = new NProducto();
-            listar();
+            listarProductos();
         }
 
 
-        private void listar()
+        private void listarProductos()
         {
             var lista = negocio.ReadAll();
-
             foreach (var item in lista)
             {
-                CardProduct card = new CardProduct();
+                ItemProductoVenta card = new ItemProductoVenta();
                 card.Item = item;
-                card.btnAddClick += Card_btnAddClick;
+                card.eventAddCart += Card_btnAddClick;
                 panel_productos.Controls.Add(card);
             }
         }
 
         private void Card_btnAddClick(entidad.EProducto data, EventArgs e)
         {
+
+
             MessageBox.Show("Producto: -" + data.Nombre);
         }
     }
