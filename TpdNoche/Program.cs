@@ -17,7 +17,7 @@ namespace TpdNoche
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FomrVentas());
+            Application.Run(new Form1());
         }
     }
 }

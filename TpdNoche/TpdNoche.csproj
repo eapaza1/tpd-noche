@@ -106,16 +106,20 @@
     <Compile Include="entidad\EProducto.cs" />
     <Compile Include="entidad\EUser.cs" />
     <Compile Include="entidad\EVenta.cs" />
+    <Compile Include="entidad\TEST.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="modelo\ClienteModelo.cs" />
     <Compile Include="modelo\Conexion.cs" />
     <Compile Include="modelo\ProductoModelo.cs" />
     <Compile Include="modelo\UserModel.cs" />
     <Compile Include="modelo\VentaModelo.cs" />
+    <Compile Include="negocio\NVenta.cs" />
+    <Compile Include="negocio\NCliente.cs" />
     <Compile Include="negocio\NProducto.cs" />
     <Compile Include="negocio\NUser.cs" />
     <Compile Include="presentacion\Componentes\CardProduct.cs">
@@ -123,6 +127,12 @@
     </Compile>
     <Compile Include="presentacion\Componentes\CardProduct.Designer.cs">
       <DependentUpon>CardProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\Componentes\ElementoLibro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="presentacion\Componentes\ElementoLibro.Designer.cs">
+      <DependentUpon>ElementoLibro.cs</DependentUpon>
     </Compile>
     <Compile Include="presentacion\Componentes\ProductListItem.cs">
       <SubType>UserControl</SubType>
@@ -135,6 +145,12 @@
     </Compile>
     <Compile Include="presentacion\FomrVentas.Designer.cs">
       <DependentUpon>FomrVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\FormCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\FormCliente.Designer.cs">
+      <DependentUpon>FormCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="presentacion\FormProductos.cs">
       <SubType>Form</SubType>
@@ -162,11 +178,17 @@
     <EmbeddedResource Include="presentacion\Componentes\CardProduct.resx">
       <DependentUpon>CardProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Componentes\ElementoLibro.resx">
+      <DependentUpon>ElementoLibro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\Componentes\ProductListItem.resx">
       <DependentUpon>ProductListItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\FomrVentas.resx">
       <DependentUpon>FomrVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\FormCliente.resx">
+      <DependentUpon>FormCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>

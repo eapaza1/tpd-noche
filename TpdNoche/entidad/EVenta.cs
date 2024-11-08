@@ -37,12 +37,27 @@ namespace TpdNoche.entidad
                 detalles= new List<EDetalleVenta>();
             }
             detalles.Add(item);
+            total += item.Cantidad * item.Precio;
         }
 
         public void removeItem(int index)
         {
+            var elemento=detalles[index];
+            total -= elemento.Cantidad * elemento.Precio;
             detalles.RemoveAt(index);
         }
+
+        public void updateItem(int index)
+        {
+            total = 0;
+            foreach (var item in detalles)
+            {
+                total += item.Cantidad * item.Precio;
+                
+            }
+        }
+
+       
 
 
     }
