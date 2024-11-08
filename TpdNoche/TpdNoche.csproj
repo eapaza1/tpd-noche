@@ -134,6 +134,12 @@
     <Compile Include="presentacion\Componentes\ElementoLibro.Designer.cs">
       <DependentUpon>ElementoLibro.cs</DependentUpon>
     </Compile>
+    <Compile Include="presentacion\Componentes\MenuItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="presentacion\Componentes\MenuItem.Designer.cs">
+      <DependentUpon>MenuItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="presentacion\Componentes\ProductListItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,11 +158,23 @@
     <Compile Include="presentacion\FormCliente.Designer.cs">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="presentacion\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="presentacion\FormProductos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="presentacion\FormProductos.Designer.cs">
       <DependentUpon>FormProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\FormUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\FormUsers.Designer.cs">
+      <DependentUpon>FormUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="presentacion\LoginForm.cs">
       <SubType>Form</SubType>
@@ -170,6 +188,8 @@
     <Compile Include="presentacion\TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="presentacion\viewEntity\EstadoCliente.cs" />
+    <Compile Include="presentacion\viewEntity\TipoDocumento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -181,6 +201,9 @@
     <EmbeddedResource Include="presentacion\Componentes\ElementoLibro.resx">
       <DependentUpon>ElementoLibro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\Componentes\MenuItem.resx">
+      <DependentUpon>MenuItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\Componentes\ProductListItem.resx">
       <DependentUpon>ProductListItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,8 +213,14 @@
     <EmbeddedResource Include="presentacion\FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\FormUsers.resx">
+      <DependentUpon>FormUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentacion\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -223,7 +252,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\abajo-cheuron.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\agregar.png" />
   </ItemGroup>
@@ -247,6 +278,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar-producto1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arriba-select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-arriba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-carrito-de-compras-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_plomo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_rojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pluma_hand1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-main.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

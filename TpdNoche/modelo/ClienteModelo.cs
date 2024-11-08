@@ -48,17 +48,17 @@ namespace TpdNoche.modelo
 
             while (reader.Read())
             {
-                ECliente cliente = new ECliente
-                {
-                    Id = reader.GetInt32("id"),
-                    Tipo_documento = reader.GetInt32("tipo_documento"),
-                    Nrodoc = reader.GetString("nrodoc"),
-                    Nombre = reader.GetString("nombre"),
-                    Direccion = reader.IsDBNull(reader.GetOrdinal("direccion")) ? null : reader.GetString("direccion"),
-                    Telefono = reader.IsDBNull(reader.GetOrdinal("telefono")) ? null : reader.GetString("telefono"),
-                    Estado = reader.GetInt32("estado"),
-                    Email = reader.IsDBNull(reader.GetOrdinal("email")) ? null : reader.GetString("email")
-                };
+                ECliente cliente = new ECliente();
+
+                cliente.Id = reader.GetInt32("id");
+                cliente.Tipo_documento = reader.GetInt32("tipo_documento");
+                cliente.Nrodoc = reader.GetString("nrodoc");
+                   cliente.Nombre = reader.GetString("nombre");
+                cliente.Direccion = reader.IsDBNull(reader.GetOrdinal("direccion")) ? null : reader.GetString("direccion");
+                cliente.Telefono = reader.IsDBNull(reader.GetOrdinal("telefono")) ? null : reader.GetString("telefono");
+                   cliente.Estado =Convert.ToInt32( reader.GetInt32("estado"));
+                   cliente.Email = reader.IsDBNull(reader.GetOrdinal("email")) ? null : reader.GetString("email");
+              
 
                 clientes.Add(cliente);
             }
