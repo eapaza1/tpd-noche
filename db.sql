@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2024 a las 01:17:07
+-- Tiempo de generación: 08-11-2024 a las 23:39:28
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -34,7 +34,7 @@ CREATE TABLE `cliente` (
   `nombre` varchar(50) NOT NULL,
   `direccion` varchar(200) DEFAULT NULL,
   `telefono` varchar(20) DEFAULT NULL,
-  `estado` binary(1) DEFAULT NULL,
+  `estado` bit(1) DEFAULT NULL,
   `email` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -43,7 +43,7 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`id`, `tipo_documento`, `nrodoc`, `nombre`, `direccion`, `telefono`, `estado`, `email`) VALUES
-(1, 1, '6546344', 'ADFASÑLDFJVNMELRE', 'DSFAÑDLSJFDSFKDJFALDSFJEIÑEFIE', '887656789', 0x01, 'ETRHUKLÑ');
+(1, 1, '6546344', 'ADFASÑLDFJVNMELRE', 'DSFAÑDLSJFDSFKDJFALDSFJEIÑEFIE', '887656789', b'1', 'ETRHUKLÑ');
 
 -- --------------------------------------------------------
 
@@ -114,7 +114,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES
 (1, 'admin', '$2y$10$0HBlAMNnyIKp7EP5gs.8Du3ZW69RXqB6p.5iy2BrLJwhEersUmPUW', 'admin@admin.com'),
 (2, 'eduar', '$2a$10$29PeDrfhgveKHEo0yDKg9urJUZeLjr8p8nKeE1taGakXiSUlOMKF6', 'correo'),
 (7, 'juancito', '$2a$10$HJa5sqf7dSioLgqMx5DKXuSzMTwrs1I321WwRsxXCJN/.xhCzb5KG', 'juan@juan'),
-(8, 'dcfdsfew', 'sdfes', 'saferfs'),
+(8, 'dcfdsfew', '$2a$10$/nLGfgeFWp4cxNEI/XyUm.yvfKw84mEwD7csCcoxBZnME.pzUbENa', 'saferfs@ffd'),
 (9, 'alberto', '$2a$10$wyPvum3jmZDXJ8BpwFWDR.asaWtM7XGfPF3YRLZQM0ukQB7QNF9Dy', 'alberto@alberto.com'),
 (10, 'juancito', 'juan', 'juan@juancito.com'),
 (11, 'vendedor', 'vendedor', 'vendedor'),
