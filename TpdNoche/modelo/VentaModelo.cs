@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using TpdNoche.entidad;
 
 namespace TpdNoche.modelo
@@ -21,6 +22,7 @@ namespace TpdNoche.modelo
         public int Create(EVenta data)
         {
             var con = conexion.getConexion;
+            con.Open();
             MySqlTransaction mst = con.BeginTransaction();
             MySqlCommand cmd = con.CreateCommand();
             cmd.Transaction = mst;
@@ -43,7 +45,7 @@ namespace TpdNoche.modelo
                 cmd.Parameters.AddWithValue("@mp", data.Metodo_pago);
                 cmd.Parameters.AddWithValue("@obs", data.Observaciones);
 
-                con.Open();
+              
 
                 int res=cmd.ExecuteNonQuery();
                 //termina la primera operacion
@@ -95,6 +97,7 @@ namespace TpdNoche.modelo
             {
                 mst.Rollback();
                 MsgError=ex.Message;
+                MessageBox.Show("error en modelo: " + ex.Message+ "codigo: "+ex.StackTrace);
                 return -1;
             }
 

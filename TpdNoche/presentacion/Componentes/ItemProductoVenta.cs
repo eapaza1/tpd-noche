@@ -18,9 +18,7 @@ namespace TpdNoche.presentacion.Componentes
 
         public event EventoItemProducto eventAddCart;
 
-        private EProducto item;
-
-      
+        private EProducto item;     
 
         public ItemProductoVenta()
         {
@@ -39,7 +37,6 @@ namespace TpdNoche.presentacion.Componentes
         {
             lbl_nombre.Text = item.Nombre;
             lbl_precio.Text=""+item.Precio;
-
         }
 
 

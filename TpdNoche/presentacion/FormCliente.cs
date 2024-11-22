@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TpdNoche.entidad;
 using TpdNoche.negocio;
 using TpdNoche.presentacion.viewEntity;
+using TpdNoche.servicios;
 
 namespace TpdNoche.presentacion
 {
@@ -26,7 +27,6 @@ namespace TpdNoche.presentacion
 
             initData();
         }
-
         private void initData()
         {
             //inicio de cbo estado
@@ -41,7 +41,6 @@ namespace TpdNoche.presentacion
             cbo_tipo_doc.DisplayMember = "descripcion";
             cbo_tipo_doc.ValueMember = "id";
         }
-
         private void listar()
         {
             try
@@ -66,19 +65,80 @@ namespace TpdNoche.presentacion
             dt.Columns.Add("DOCUMENTO");
             dt.Columns.Add("CORREO");
             dt.Columns.Add("TELEFONO");
-
             foreach (var item in clientes)
             {
                 dt.Rows.Add(item.Id,item.Nombre,item.Nrodoc,item.Email,item.Telefono);
             }
-
-            dgv_clientes.DataSource = clientes;
+            dgv_clientes.DataSource = dt;
         }
 
-        private void cbo_tipo_doc_SelectedIndexChanged(object sender, EventArgs e)
+        private void btn_ver_Click(object sender, EventArgs e)
         {
-            int id=(int)cbo_tipo_doc.SelectedValue;
-            MessageBox.Show(""+id);
+            string documento=txt_nrodoc.Text;
+
+            if (cbo_tipo_doc.Text=="DNI"&&documento.Length==8)
+            {
+                buscarDni(documento);                
+            }
+
+            if (cbo_tipo_doc.Text == "RUC" && documento.Length == 11)
+            {
+                buscarRuc(documento);
+            }            
+        }
+
+        private async void buscarDni(string nrodoc)
+        {
+            ApiService api=new ApiService();
+
+            try
+            {
+                var resultado=await api.getByDni(nrodoc);
+                txt_nombres.Text = resultado.Nombres+" "+
+                    resultado.Apellido_paterno+" "+resultado.Apellido_materno;
+                txt_direccion.Text = resultado.Direccion;
+            }catch(Exception ex)
+            {
+                MessageBox.Show("error: " + ex.Message);
+            }
+
+        }
+
+        private async void buscarRuc(string ruc)
+        {
+            var api=new ApiService();
+            try
+            {
+                var emp=await api.getByRuc(ruc);
+                txt_nombres.Text = emp.Nombre_o_razon_social;
+                txt_direccion.Text = emp.Direccion;
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error: "+ex.Message);
+            }
+        }
+
+        private void btn_registrar_Click(object sender, EventArgs e)
+        {
+            ECliente cliente=new ECliente();
+            cliente.Nombre= txt_nombres.Text;
+            cliente.Tipo_documento =(int) cbo_tipo_doc.SelectedValue;
+            cliente.Nrodoc=txt_nrodoc.Text;
+            cliente.Direccion=txt_direccion.Text;
+            cliente.Telefono=txt_telefono.Text;
+            cliente.Email=txt_email.Text;
+            cliente.Estado = (int)cbo_estado.SelectedValue;
+            try
+            {
+                int res = nCliente.Create(cliente);
+                listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show (ex.Message);
+            }
+           
         }
     }
 }

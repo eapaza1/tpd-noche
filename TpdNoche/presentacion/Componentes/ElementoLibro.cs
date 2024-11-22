@@ -14,6 +14,18 @@ namespace TpdNoche.presentacion.Componentes
     {
         private ELibro libro;
 
+        public delegate void EventElemento(ELibro data, EventArgs e);
+
+        public event EventElemento addCartEvent;//null
+
+        //ElementoLibro.Libro=   //set
+        //ELibro libro= ElementoLibro.Libro  //get
+
+        public ElementoLibro()
+        {
+            InitializeComponent();
+        }
+
         public ELibro Libro
         {
             get
@@ -36,15 +48,18 @@ namespace TpdNoche.presentacion.Componentes
             //mostrar ......
         }
 
-        //ElementoLibro.Libro=   //set
-        //ELibro libro= ElementoLibro.Libro  //get
-
-        public ElementoLibro()
+        private void btn_agregar_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
+            if (addCartEvent != null)
+            {
+                addCartEvent(libro, e);
+            }
+
+            addCartEvent?.Invoke(libro, e);
+            
         }
     }
-    
+
     public class ELibro
     {
         string titulo, descripcion;
@@ -55,5 +70,22 @@ namespace TpdNoche.presentacion.Componentes
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public string Imagen { get => imagen; set => imagen = value; }
         public double Precio { get => precio; set => precio = value; }
+    }
+
+    public class Principal
+    {
+        public Principal()
+        {
+            ElementoLibro elementoLibro = new ElementoLibro();  
+            elementoLibro.Libro=new ELibro();
+            //elementoLibro.addCartEvent += ElementoLibro_addCartEvent;
+
+
+        }
+
+        private void ElementoLibro_addCartEvent(ELibro data, EventArgs e)
+        {
+            
+        }
     }
 }

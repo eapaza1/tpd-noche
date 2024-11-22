@@ -17,11 +17,12 @@ namespace TpdNoche.modelo
         private string SERVER = "localhost";
         private string DB_USER = "root";
         private string DB_PASS = "";
+        private string DB_PORT = "3306";
 
         public Conexion()
         {
             string cadenaConexion =
-             $"Server={SERVER};Database={DB_NAME};User ID={DB_USER};Password={DB_PASS};";
+             $"Server={SERVER};Port={DB_PORT};Database={DB_NAME};User ID={DB_USER};Password={DB_PASS};";
 
             conn = new MySqlConnection(cadenaConexion) ;
 

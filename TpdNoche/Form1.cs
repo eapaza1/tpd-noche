@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TpdNoche.entidad;
+using TpdNoche.negocio;
 using TpdNoche.presentacion.Componentes;
 
 namespace TpdNoche
@@ -17,7 +19,21 @@ namespace TpdNoche
         {
             InitializeComponent();
 
-            listar();
+            //listar();
+
+            InicializarDatos();
+
+            cb_cliente.SelectedValue = 2;
+        }
+
+        private void InicializarDatos()
+        {
+            var clientes=new NCliente().ReadAll();
+            cb_cliente.Items.Clear();
+            cb_cliente.DataSource = clientes;
+            cb_cliente.DisplayMember = "nombre";
+            cb_cliente.ValueMember = "id";
+
         }
 
         private void listar()
@@ -31,11 +47,20 @@ namespace TpdNoche
             {
                 ElementoLibro elibro= new ElementoLibro();
                elibro.Libro = item;
-                flp_data.Controls.Add(elibro);
+               // flp_data.Controls.Add(elibro);
             }
 
 
 
+        }
+
+        private void cb_cliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //var res =(ECliente) cb_cliente.SelectedItem;
+
+            var res=cb_cliente.SelectedValue;
+
+            MessageBox.Show("elemento seleccionado: " + res);
         }
     }
 }
